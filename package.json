@@ -1,0 +1,35 @@
+{
+  "name": "uxuidesigner-portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "test:responsive": "playwright test tests/responsive",
+    "test:visual": "playwright test tests/visual",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "test:e2e:report": "playwright show-report",
+    "seo:audit": "unlighthouse-ci --site ${SITE_URL:-http://127.0.0.1:4173} --urls /,/legal/privacy-policy.html --mobile",
+    "seo:audit:mobile": "unlighthouse-ci --site ${SITE_URL:-http://127.0.0.1:4173} --urls /,/legal/privacy-policy.html --mobile",
+    "seo:audit:desktop": "unlighthouse-ci --site ${SITE_URL:-http://127.0.0.1:4173} --urls /,/legal/privacy-policy.html --desktop",
+    "seo:report": "open .unlighthouse/reports/index.html || open .unlighthouse/index.html || echo 'Audit report generated in .unlighthouse/'",
+    "seo:ci": "unlighthouse-ci --site ${SITE_URL:-http://127.0.0.1:4173} --urls /,/legal/privacy-policy.html --budget 85"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/grifano/grifano-com.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/grifano/grifano-com/issues"
+  },
+  "homepage": "https://github.com/grifano/grifano-com#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "@unlighthouse/cli": "^0.19.0"
+  }
+}

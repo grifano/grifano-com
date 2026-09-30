@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Serhii Orlenko — Brand Decoration Component Preview (Figma Node 11:63)</title>
+  <link rel="stylesheet" href="../css/normalize.css">
+  <link rel="stylesheet" href="../css/portfolio-custom.css">
+  <style>
+    body {
+      background-color: #F7F8FA;
+      color: #172033;
+      font-family: var(--font-body, 'Source Sans 3', sans-serif);
+      padding: 40px 20px;
+      line-height: 1.6;
+    }
+    .preview-container {
+      max-width: 1040px;
+      margin: 0 auto;
+    }
+    .preview-header {
+      margin-bottom: 36px;
+      border-bottom: 1px solid #D8DDE7;
+      padding-bottom: 24px;
+    }
+    .preview-header h1 {
+      font-family: var(--font-headline, 'Plus Jakarta Sans', sans-serif);
+      font-size: 32px;
+      margin: 0 0 8px;
+      color: #172033;
+    }
+    .preview-header p {
+      margin: 0;
+      color: #566176;
+      font-size: 16px;
+    }
+    .preview-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 28px;
+      margin-bottom: 48px;
+    }
+    .preview-card {
+      background: #FFFFFF;
+      border: 1px solid #D8DDE7;
+      border-radius: 16px;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      box-shadow: 0 4px 16px rgba(23, 32, 51, 0.04);
+    }
+    .preview-card.dark-theme {
+      background: #0D1527;
+      border-color: #1E293B;
+      color: #F8FAFC;
+    }
+    .preview-card.tint-theme {
+      background: #E8EEFC;
+      border-color: #C7D7F7;
+    }
+    .card-label {
+      font-family: var(--font-headline, 'Plus Jakarta Sans', sans-serif);
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 24px;
+      align-self: flex-start;
+      letter-spacing: -0.01em;
+      color: inherit;
+    }
+    .card-specs {
+      margin-top: 24px;
+      font-size: 12px;
+      color: #566176;
+      width: 100%;
+      border-top: 1px solid #EEF1F6;
+      padding-top: 16px;
+      line-height: 1.5;
+    }
+    .dark-theme .card-specs {
+      color: #94A3B8;
+      border-color: #1E293B;
+    }
+    .spec-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      margin-top: 8px;
+    }
+    .spec-table td {
+      padding: 4px 0;
+    }
+    .spec-table td:last-child {
+      text-align: right;
+      font-weight: 600;
+    }
+    .sizes-row {
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+      padding: 20px 0;
+    }
+    .size-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+    .size-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: #566176;
+    }
+    .controls-panel {
+      background: #FFFFFF;
+      border: 1px solid #D8DDE7;
+      border-radius: 12px;
+      padding: 16px 24px;
+      margin-bottom: 32px;
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .toggle-btn {
+      background: #1D4ED8;
+      color: #FFF;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+    .toggle-btn:hover {
+      background: #173EA8;
+    }
+    .paused .brand-decoration__blue,
+    .paused .brand-decoration-blue,
+    .paused .brand-decoration__glass,
+    .paused .brand-decoration-glass {
+      animation-play-state: paused !important;
+    }
+  </style>
+</head>
+<body>
+  <div class="preview-container">
+    <header class="preview-header">
+      <h1>Brand Decoration Component (Figma Node 11:63)</h1>
+      <p>Visual inspection, exact Figma math, ambient breathing motion, and responsive scaling verification.</p>
+    </header>
+
+    <div class="controls-panel">
+      <strong>Inspection controls:</strong>
+      <button class="toggle-btn" id="btn-toggle-motion">Pause / Play Animation</button>
+      <button class="toggle-btn" id="btn-toggle-reduced" style="background: #566176;">Simulate prefers-reduced-motion</button>
+      <span id="motion-status" style="font-size: 13px; color: #566176;">Status: Live Smooth Float (8.2s / 9.5s)</span>
+    </div>
+
+    <div class="preview-grid">
+      <!-- 1. Exact 1:1 Figma Base Size (145px) on Brand Background -->
+      <div class="preview-card">
+        <span class="card-label">01 · Reference 145 × 145 px (Default)</span>
+        <div style="padding: 24px 0;">
+          <div class="brand-decoration" aria-hidden="true">
+            <div class="brand-decoration__blue"></div>
+            <div class="brand-decoration__glass"></div>
+          </div>
+        </div>
+        <div class="card-specs">
+          <table class="spec-table">
+            <tr><td>Container:</td><td>145 × 145 px</td></tr>
+            <tr><td>Blue square:</td><td>89.23 px (61.54%) at (0, 55.77 px)</td></tr>
+            <tr><td>Blue radius:</td><td>21.76 px (24.39%)</td></tr>
+            <tr><td>Blue gradient:</td><td>#0F3691 → #1D4ED8 (90deg)</td></tr>
+            <tr><td>Glass square:</td><td>111.54 px (76.93%) at (33.46 px, 0)</td></tr>
+            <tr><td>Glass radius:</td><td>29.46 px (26.41%)</td></tr>
+            <tr><td>Glass blur:</td><td>19.64 px backdrop blur</td></tr>
+            <tr><td>Glass border:</td><td>3.265 px rgba(255,255,255,0.24)</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <!-- 2. On Dark Surface (To verify glass refraction & highlights) -->
+      <div class="preview-card dark-theme">
+        <span class="card-label">02 · Dark Background Refraction</span>
+        <div style="padding: 24px 0;">
+          <div class="brand-decoration" aria-hidden="true">
+            <div class="brand-decoration__blue"></div>
+            <div class="brand-decoration__glass"></div>
+          </div>
+        </div>
+        <div class="card-specs">
+          <p style="margin: 0;">Demonstrates the frosted glass translucency, top highlight inset (0 2.455px), and outer soft shadow against high contrast background.</p>
+        </div>
+      </div>
+
+      <!-- 3. On Soft Tint Surface -->
+      <div class="preview-card tint-theme">
+        <span class="card-label">03 · Soft Brand Tint (#E8EEFC)</span>
+        <div style="padding: 24px 0;">
+          <div class="brand-decoration" aria-hidden="true">
+            <div class="brand-decoration__blue"></div>
+            <div class="brand-decoration__glass"></div>
+          </div>
+        </div>
+        <div class="card-specs">
+          <p style="margin: 0;">Demonstrates ambient blend with portfolio tint tokens and subtle overlap depth.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. Responsive Scale Verification -->
+    <div class="preview-card" style="margin-bottom: 48px;">
+      <span class="card-label">04 · Responsive Proportional Scaling (180px, 145px, 110px, 72px, 48px)</span>
+      <div class="sizes-row">
+        <div class="size-item">
+          <div class="brand-decoration brand-decoration--xl" aria-hidden="true">
+            <div class="brand-decoration__blue"></div>
+            <div class="brand-decoration__glass"></div>
+          </div>
+          <span class="size-label">XL (180px)</span>
+        </div>
+        <div class="size-item">
+          <div class="brand-decoration brand-decoration--lg" aria-hidden="true">
+            <div class="brand-decoration__blue"></div>
+            <div class="brand-decoration__glass"></div>
+          </div>
+          <span class="size-label">LG (145px base)</span>
+        </div>
+        <div class="size-item">
+          <div class="brand-decoration brand-decoration--md" aria-hidden="true">
+            <div class="brand-decoration__blue"></div>
+            <div class="brand-decoration__glass"></div>
+          </div>
+          <span class="size-label">MD (110px)</span>
+        </div>
+        <div class="size-item">
+          <div class="brand-decoration brand-decoration--sm" aria-hidden="true">
+            <div class="brand-decoration__blue"></div>
+            <div class="brand-decoration__glass"></div>
+          </div>
+          <span class="size-label">SM (72px)</span>
+        </div>
+        <div class="size-item">
+          <div class="brand-decoration brand-decoration--xs" aria-hidden="true">
+            <div class="brand-decoration__blue"></div>
+            <div class="brand-decoration__glass"></div>
+          </div>
+          <span class="size-label">XS (48px)</span>
+        </div>
+      </div>
+      <div class="card-specs">
+        <p style="margin: 0;">Notice that all proportions (overlap, corner radii, borders, blur, and shadows) scale with mathematical consistency across all sizes.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const toggleBtn = document.getElementById('btn-toggle-motion');
+    const reducedBtn = document.getElementById('btn-toggle-reduced');
+    const statusText = document.getElementById('motion-status');
+    let isPaused = false;
+    let isReduced = false;
+
+    toggleBtn.addEventListener('click', () => {
+      isPaused = !isPaused;
+      document.body.classList.toggle('paused', isPaused);
+      toggleBtn.textContent = isPaused ? 'Resume Animation' : 'Pause Animation';
+      statusText.textContent = isPaused ? 'Status: Static Figma Composition (Paused)' : 'Status: Live Smooth Float';
+    });
+
+    reducedBtn.addEventListener('click', () => {
+      isReduced = !isReduced;
+      document.body.classList.toggle('simulated-reduced-motion', isReduced);
+      if (isReduced) {
+        document.querySelectorAll('.brand-decoration__blue, .brand-decoration__glass').forEach(el => {
+          el.style.animation = 'none';
+          el.style.transform = 'none';
+        });
+        statusText.textContent = 'Status: Reduced Motion Active (Animation disabled, pure static layout)';
+        reducedBtn.textContent = 'Disable Reduced Motion Simulation';
+      } else {
+        document.querySelectorAll('.brand-decoration__blue, .brand-decoration__glass').forEach(el => {
+          el.style.animation = '';
+          el.style.transform = '';
+        });
+        statusText.textContent = 'Status: Live Smooth Float';
+        reducedBtn.textContent = 'Simulate prefers-reduced-motion';
+      }
+    });
+  </script>
+</body>
+</html>

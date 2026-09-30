@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Serhii Orlenko — візуальний напрям портфоліо</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400..800;1,400..800&family=Source+Sans+3:ital,wght@0,300..800;1,300..800&display=swap');
+    :root{--bg:#F7F8FA;--surface:#FFF;--text:#172033;--secondary:#566176;--primary:#1D4ED8;--hover:#173EA8;--tint:#E8EEFC;--border:#D8DDE7;--radius:16px}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:24px}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:'Source Sans 3',-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:16px;line-height:1.6}
+    a{color:var(--primary);text-decoration-thickness:1px;text-underline-offset:4px}
+    a:hover{color:var(--hover)}
+    a:focus-visible,button:focus-visible{outline:3px solid var(--primary);outline-offset:5px}
+    .skip{position:absolute;left:24px;top:-90px;z-index:3;background:white;padding:12px 18px;border-radius:8px}
+    .skip:focus{top:12px}
+    .wrap{width:min(1120px,calc(100% - 80px));margin-inline:auto}
+    .preview-bar{background:var(--text);color:white;font-size:13px;letter-spacing:.015em}
+    .preview-bar .wrap{min-height:44px;display:flex;justify-content:space-between;align-items:center;gap:12px;padding-block:10px}
+    .preview-status{color:#CBD4E8;white-space:nowrap}
+    .site-header{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-block:34px;border-bottom:1px solid var(--border)}
+    .wordmark{font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:18px;letter-spacing:-.04em;text-decoration:none;color:var(--text)}
+    .wordmark span{color:var(--primary)}
+    .nav{display:flex;gap:28px;align-items:center}
+    .nav a{font-size:14px;font-weight:600;text-decoration:none;color:var(--secondary);min-height:44px;display:inline-flex;align-items:center}
+    .nav a:hover{color:var(--primary)}
+    .hero{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:56px;align-items:center;padding-block:76px 80px}
+    .hero-name{font-family:'Plus Jakarta Sans',sans-serif;font-size:19px;letter-spacing:-.025em;margin:0 0 12px}
+    h1{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(44px,5.4vw,68px);font-weight:600;line-height:1.12;letter-spacing:-.045em;margin:0 0 16px}
+    .hero-role{font-size:19px;font-weight:500;color:var(--secondary);margin:0 0 28px;letter-spacing:-.02em}
+    .hero-description{font-size:23px;line-height:1.5;letter-spacing:-.018em;max-width:460px;margin:0 0 32px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap}
+    .button{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:48px;padding:13px 20px;border-radius:8px;background:var(--primary);color:white;text-decoration:none;font-size:15px;font-weight:600;line-height:1.4;border:1px solid transparent;transition:background-color .15s,color .15s,border-color .15s}
+    .button:hover{background:var(--hover);color:white}
+    .button.secondary{background:transparent;color:var(--text);border-color:var(--secondary)}
+    .button.secondary:hover{background:var(--tint);border-color:var(--primary);color:var(--primary)}
+    .arrow{font-size:20px;line-height:1;font-weight:400}
+    .hero-note{margin:18px 0 0;font-size:12px;color:var(--secondary);max-width:430px}
+    figure{margin:0}
+    .portrait{display:block;width:100%;height:auto;aspect-ratio:1;border-radius:var(--radius)}
+    figcaption{margin-top:12px;font-size:12px;line-height:1.5;color:var(--secondary);display:flex;justify-content:space-between;gap:16px}
+    .direction-summary{border-block:1px solid var(--border);padding:28px 0;display:grid;grid-template-columns:170px 1fr;gap:36px}
+    .eyebrow{font-size:11px;line-height:1.5;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--secondary);margin:4px 0 0}
+    .direction-summary p:last-child{font-size:18px;line-height:1.6;max-width:780px;margin:0;letter-spacing:-.015em}
+    .section{padding-block:64px 0}
+    .section-head{display:flex;justify-content:space-between;gap:32px;align-items:flex-end;margin-bottom:24px}
+    h2{font-size:29px;font-weight:650;letter-spacing:-.04em;line-height:1.25;margin:8px 0 0}
+    .section-description{max-width:435px;margin:0;color:var(--secondary);font-size:14px;line-height:1.65}
+    .palette{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .swatch{border:1px solid var(--border);border-radius:12px;overflow:hidden;background:var(--surface)}
+    .color{height:84px;background:var(--swatch)}
+    .swatch-text{padding:14px 16px 16px;display:flex;align-items:center;justify-content:space-between;gap:8px}
+    .swatch strong{display:block;font-size:13px;font-weight:650}
+    .swatch code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:var(--secondary)}
+    .pair-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
+    .pair{background:var(--bg);padding:22px 24px;border:1px solid var(--border);border-radius:12px}
+    .pair-visual{font-family:'Plus Jakarta Sans',sans-serif;font-size:34px;line-height:1.2;font-weight:600;letter-spacing:-.05em;display:inline-block;margin-bottom:12px}
+    .pair p{font-size:13px;color:var(--secondary);margin:0}
+    .pair strong{display:block;font-size:20px;letter-spacing:-.03em;font-weight:600;margin:4px 0}
+    .pair.primary{background:var(--primary);color:white;border-color:var(--primary)}
+    .pair.primary p{color:white}
+    .contrast-note{margin:16px 0 0;font-size:12px;color:var(--secondary);max-width:900px}
+    .states{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:28px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px}
+    .state-label{font-size:12px;color:var(--secondary);margin:0 0 16px}
+    .state-button{pointer-events:none}
+    .state-button.hover{background:var(--hover)}
+    .state-button.focus{outline:3px solid var(--primary);outline-offset:5px}
+    .state-detail{font-size:12px;color:var(--secondary);line-height:1.6;margin:16px 0 0}
+    .type-block{display:grid;grid-template-columns:1fr 1fr;gap:48px;padding-block:32px;border-bottom:1px solid var(--border)}
+    .type-heading{font-family:'Plus Jakarta Sans',sans-serif;letter-spacing:-.045em;font-size:34px;line-height:1.25;font-weight:600;margin:12px 0 16px}
+    .type-body{font-size:17px;line-height:1.65;margin:12px 0 16px}
+    .type-block p:last-child{font-size:13px;color:var(--secondary);margin-bottom:0}
+    .preview-destinations{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:48px}
+    .destination{border-top:2px solid var(--primary);padding-top:20px}
+    h3{font-size:18px;line-height:1.35;letter-spacing:-.02em;margin:0 0 10px}
+    .destination p{margin:0;font-size:14px;line-height:1.7;color:var(--secondary)}
+    .foot{margin-top:56px;padding-block:24px 32px;border-top:1px solid var(--border);display:flex;gap:24px;justify-content:space-between;font-size:12px;color:var(--secondary)}
+    .foot a{white-space:nowrap}
+    @media(max-width:950px){.wrap{width:calc(100% - 48px)}.hero{gap:32px;padding-block:56px}.hero-description{font-size:20px}.hero-role{font-size:17px}h1{font-size:clamp(38px,5.4vw,52px)}.swatch-text{display:block}.swatch code{display:block;margin-top:4px}.states{gap:20px}.state-button{font-size:13px;padding-inline:13px}}
+    @media(max-width:680px){.wrap{width:calc(100% - 40px)}.preview-bar .wrap{align-items:flex-start;flex-direction:column;gap:2px}.preview-status{font-size:11px}.site-header{padding-block:20px;gap:16px}.wordmark{font-size:15px}.nav{gap:16px}.nav a{font-size:12px}.nav .desktop-only{display:none}.hero{grid-template-columns:1fr;gap:36px;padding-block:40px}.hero-name{font-size:17px}h1{font-size:clamp(42px,11.3vw,66px)}.hero-role{font-size:16px;margin-bottom:20px}.hero-description{font-size:21px;max-width:440px;margin-bottom:24px}.hero-note{font-size:11px}.hero figure{max-width:440px;width:100%;justify-self:center}.direction-summary{grid-template-columns:1fr;gap:12px;padding-block:24px}.direction-summary p:last-child{font-size:16px}.section{padding-top:42px}.section-head{align-items:flex-start;flex-direction:column;gap:14px;margin-bottom:20px}h2{font-size:27px}.palette{grid-template-columns:repeat(2,1fr);gap:12px}.color{height:72px}.swatch-text{padding:12px}.pair-grid{grid-template-columns:1fr}.pair{display:grid;grid-template-columns:64px 1fr;column-gap:12px;align-items:center;padding:18px 20px}.pair-visual{grid-column:1;grid-row:1 / 3;margin:0}.pair strong{grid-column:2;grid-row:1;margin:0}.pair p{grid-column:2;grid-row:2}.states{grid-template-columns:1fr;padding:24px;gap:28px}.state-label{margin-bottom:12px}.state-button{font-size:15px;padding-inline:20px}.state-detail{margin-top:14px}.type-block{grid-template-columns:1fr;gap:24px}.preview-destinations{grid-template-columns:1fr;gap:28px;margin-top:36px}.foot{flex-direction:column;gap:8px;margin-top:40px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+    @media print{.preview-bar{background:white;color:#172033}.preview-status{color:#566176}.section,.hero{break-inside:avoid}.nav,.skip{display:none}}
+  </style>
+</head>
+<body id="top">
+  <a class="skip" href="#main">Перейти до вмісту</a>
+  <div class="preview-bar"><div class="wrap"><span>Візуальний напрям 01 · Портфоліо для найму</span><span class="preview-status">Локальний зразок · Не опубліковано</span></div></div>
+  <div class="wrap">
+    <header class="site-header">
+      <a class="wordmark" href="#top" lang="en">Serhii<span>.</span>Orlenko</a>
+      <nav class="nav" aria-label="Навігація зразка"><a href="#palette">Палітра</a><a href="#states">Стани</a><a class="desktop-only" href="#typography">Типографіка</a></nav>
+    </header>
+    <main id="main">
+      <section class="hero" aria-label="Зразок першого екрана">
+        <div lang="en">
+          <p class="hero-name">Serhii Orlenko</p>
+          <h1>UI/UX Designer</h1>
+          <p class="hero-role">Product Design · Web &amp; Mobile</p>
+          <p class="hero-description">I design clear, practical interfaces for web and mobile.</p>
+          <div class="actions"><a class="button" href="#selected-work">View selected work <span class="arrow" aria-hidden="true">↗</span></a><a class="button secondary" href="#contact">Contact</a></div>
+          <p class="hero-note" lang="uk">Приклад формулювань і композиції. Кнопки ведуть до пояснень нижче; це ще не повний сайт.</p>
+        </div>
+        <figure>
+          <img class="portrait" src="assets/uxui-designer-profile.jpg" width="1254" height="1254" alt="Serhii Orlenko у синій бандані та окулярах" fetchpriority="high">
+          <figcaption><span>Ваше нове фото · без змін</span><span>Квадрат 1:1</span></figcaption>
+        </figure>
+      </section>
+      <section class="direction-summary" id="direction" aria-label="Пояснення напряму">
+        <p class="eyebrow">Ідея напряму</p>
+        <p>Синій у фото задає акцент. Світле нейтральне тло, темний текст і спокійна типографіка залишають увагу на людині та роботах. Насичений синій позначає головну дію й посилання.</p>
+      </section>
+      <section class="section" id="palette" aria-labelledby="palette-title">
+        <div class="section-head"><div><p class="eyebrow">01 / Колір</p><h2 id="palette-title">Синій акцент. Чітка основа.</h2></div><p class="section-description">Кожен колір має роль. Світла межа — для поділу поверхонь; контур інтерактивних елементів і фокус мають виразніший контраст.</p></div>
+        <div class="palette">
+          <div class="swatch"><div class="color" style="--swatch:#F7F8FA"></div><div class="swatch-text"><strong>Тло сторінки</strong><code>#F7F8FA</code></div></div>
+          <div class="swatch"><div class="color" style="--swatch:#FFFFFF"></div><div class="swatch-text"><strong>Поверхня</strong><code>#FFFFFF</code></div></div>
+          <div class="swatch"><div class="color" style="--swatch:#172033"></div><div class="swatch-text"><strong>Основний текст</strong><code>#172033</code></div></div>
+          <div class="swatch"><div class="color" style="--swatch:#566176"></div><div class="swatch-text"><strong>Другорядний текст</strong><code>#566176</code></div></div>
+          <div class="swatch"><div class="color" style="--swatch:#1D4ED8"></div><div class="swatch-text"><strong>Основна дія</strong><code>#1D4ED8</code></div></div>
+          <div class="swatch"><div class="color" style="--swatch:#173EA8"></div><div class="swatch-text"><strong>Наведення</strong><code>#173EA8</code></div></div>
+          <div class="swatch"><div class="color" style="--swatch:#E8EEFC"></div><div class="swatch-text"><strong>М’який синій</strong><code>#E8EEFC</code></div></div>
+          <div class="swatch"><div class="color" style="--swatch:#D8DDE7"></div><div class="swatch-text"><strong>Декоративна межа</strong><code>#D8DDE7</code></div></div>
+        </div>
+        <div class="pair-grid" aria-label="Розрахунок контрасту вибраних пар">
+          <div class="pair"><span class="pair-visual" aria-hidden="true">Aa</span><p>Основний текст / тло</p><strong>15.31 : 1</strong></div>
+          <div class="pair"><span class="pair-visual" style="color:var(--secondary)" aria-hidden="true">Aa</span><p>Другорядний текст / тло</p><strong>5.87 : 1</strong></div>
+          <div class="pair primary"><span class="pair-visual" aria-hidden="true">Aa</span><p>Білий текст / синя кнопка</p><strong>6.70 : 1</strong></div>
+        </div>
+        <p class="contrast-note">Розраховано для вказаних HEX-пар на непрозорих поверхнях. Усі три пари перевищують 4.5:1 для звичайного тексту. Це перевірка палітри; доступність готового сайту потребує окремої перевірки сторінок і взаємодій.</p>
+      </section>
+      <section class="section" id="states" aria-labelledby="states-title">
+        <div class="section-head"><div><p class="eyebrow">02 / Взаємодія</p><h2 id="states-title">Помітна дія та фокус.</h2></div><p class="section-description">Наведіть курсор на кнопки у першому екрані або пройдіть ними клавішею Tab. Нижче — постійні зразки трьох станів.</p></div>
+        <div class="states">
+          <div><p class="state-label">Звичайний стан</p><span class="button state-button" lang="en">View selected work <span class="arrow" aria-hidden="true">↗</span></span><p class="state-detail">Білий текст на #1D4ED8<br>Контраст 6.70:1</p></div>
+          <div><p class="state-label">Наведення курсора</p><span class="button state-button hover" lang="en">View selected work <span class="arrow" aria-hidden="true">↗</span></span><p class="state-detail">Білий текст на #173EA8<br>Контраст 9.17:1</p></div>
+          <div><p class="state-label">Фокус клавіатури</p><span class="button state-button focus" lang="en">View selected work <span class="arrow" aria-hidden="true">↗</span></span><p class="state-detail">Синій контур 3 px із відступом<br>Окремий від заливки кнопки</p></div>
+        </div>
+      </section>
+      <section class="section" id="typography" aria-labelledby="typography-title">
+        <div class="section-head"><div><p class="eyebrow">03 / Типографіка</p><h2 id="typography-title">Шрифти згідно з CV, ясна ієрархія.</h2></div><p class="section-description">Plus Jakarta Sans для акцентних заголовків. Source Sans 3 для основного тексту та інтерфейсних підписів.</p></div>
+        <div class="type-block">
+          <div><p class="eyebrow">Plus Jakarta Sans · 600 / 700</p><p class="type-heading" lang="en">Clear ideas.<br>Practical interfaces.</p><p>Виразний заголовок, геометричний гротеск, звичайний регістр без суцільних великих літер.</p></div>
+          <div><p class="eyebrow">Source Sans 3 · 400 / 600</p><p class="type-body">Короткий опис пояснює завдання, особисту роль і рішення. Результат називаємо лише тоді, коли його можна підтвердити.</p><p>Основний текст 16–18 px · міжрядковий інтервал 1.6 · комфортна довжина рядка.</p></div>
+        </div>
+      </section>
+      <div class="preview-destinations">
+        <section class="destination" id="selected-work" aria-labelledby="work-title"><h3 id="work-title">Місце для вибраних робіт</h3><p>У готовому портфоліо тут будуть 2–3 проєкти з підтвердженою роллю, рішеннями та результатом. Цей зразок показує палітру й перший екран; кейси ще не додані.</p></section>
+        <section class="destination" id="contact" aria-labelledby="contact-title"><h3 id="contact-title">Контакт і CV</h3><p>До готової версії додамо актуальний CV та перевірені контактні посилання. У цьому зразку немає демонстраційної форми чи фіктивного завантаження CV.</p></section>
+      </div>
+    </main>
+    <footer class="foot"><span>Концепція для погодження · Вихідний Webflow-сайт не змінено.</span><a href="#top">До першого екрана ↑</a></footer>
+  </div>
+</body>
+</html>
